@@ -15,10 +15,11 @@ import sys
 
 import moves
 import screen_handler as screen
+import algorithms
 
 MAX_MOVES = 5
 DRAW_CANVAS = False
-MAX_TIME = 75 # for some gems, use up to 160s
+MAX_TIME = 70 # for some gems, use up to 160s
 
 def start_game(anchor):
     print "Starting game!"
@@ -56,28 +57,8 @@ def main():
 
         if DRAW_CANVAS: screen.draw_canvas(board)
 
-        for y in range(0, 8):
-            for x in range(0, 8):
-                if screen.same_gem(x, y, x-1, y, board): # two gems next to each other, horizontal
-                    if screen.same_gem(x, y, x+1, y-1, board): moves.move_fields(x+1, y, x+1, y-1, anchor) # right
-                    if screen.same_gem(x, y, x+2, y, board): moves.move_fields(x+1, y, x+2, y, anchor)
-                    if screen.same_gem(x, y, x+1, y+1, board): moves.move_fields(x+1, y, x+1, y+1, anchor)
-                    if screen.same_gem(x, y, x-2, y-1, board): moves.move_fields(x-2, y, x-2, y-1, anchor) # left
-                    if screen.same_gem(x, y, x-2, y+1, board): moves.move_fields(x-2, y, x-2, y+1, anchor)
-                    if screen.same_gem(x, y, x-3, y, board): moves.move_fields(x-2, y, x-3, y, anchor)
-                if screen.same_gem(x, y, x, y-1, board): # two gems next to each other, vertical
-                    if screen.same_gem(x, y, x+1, y+1, board): moves.move_fields(x, y+1, x+1, y+1, anchor) # below
-                    if screen.same_gem(x, y, x, y+2, board): moves.move_fields(x, y+1, x, y+2, anchor)
-                    if screen.same_gem(x, y, x-1, y+1, board): moves.move_fields(x, y+1, x-1, y+1, anchor)
-                    if screen.same_gem(x, y, x-1, y-2, board): moves.move_fields(x, y-2, x-1, y-2, anchor) # above
-                    if screen.same_gem(x, y, x+1, y-2, board): moves.move_fields(x, y-2, x+1, y-2, anchor)
-                    if screen.same_gem(x, y, x, y-3, board): moves.move_fields(x, y-2, x, y-3, anchor)
-                if screen.same_gem(x, y, x-2, y, board): # gem in the middle is missing, horizontal
-                    if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x-1, y, x-1, y-1, anchor)
-                    if screen.same_gem(x, y, x-1, y+1, board): moves.move_fields(x-1, y, x-1, y+1, anchor)
-                if screen.same_gem(x, y, x, y-2, board): # gem in the middle is missing, vertical
-                    if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x, y-1, x-1, y-1, anchor)
-                    if screen.same_gem(x, y, x+1, y-1, board): moves.move_fields(x, y-1, x+1, y-1, anchor)
+        algorithms.random_algorithm(board, anchor)
+
     print "Game ended."
     return
 
