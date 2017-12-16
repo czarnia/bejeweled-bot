@@ -1,14 +1,14 @@
 bejeweled-bot
 ==============
 
-Plays an automated game of Bejeweled. Be sure to read the _CAUTION_ section below before using.
+Plays an automated game of Bejeweled Blitz. Be sure to read the _CAUTION_ section below before using.
 
 ![](https://raw.github.com/captainfox/bejeweled-bot/master/playing.png)
 
 ## 1. Dependencies
 
 - [autopy](http://www.autopy.org/) - used for accessing mouse/screen (OS independent. Windows installers available)
-- [pygame](http://www.pygame.org/) - optional, used for displaying recognized gems
+- [pygame](http://www.pygame.org/) - used for displaying recognized gems
 - Quartz, `pip install pyobjc-framework-Quartz`
 
 _Please note_: the script is optimized for Mac OS X, which means screenshots could be faster on other systems (Windows, Ubuntu) using autopy itself or another library like pyscreenshot.
@@ -53,4 +53,3 @@ There are 2 fallbacks if the end of the game is not recognized properly:
 
 * The bot will stop automatically after 75 seconds (which should be enough in regular mode. You might tweak that when using sepcial gems.)
 * The bot will stop when you scroll down and big parts of the recognized area are white.
-
