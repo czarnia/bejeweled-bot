@@ -19,7 +19,7 @@ import algorithms
 
 MAX_MOVES = 5
 DRAW_CANVAS = False
-MAX_TIME = 70 # for some gems, use up to 160s
+MAX_TIME = 65 # for some gems, use up to 160s
 
 def start_game(anchor):
     print "Starting game!"
@@ -57,7 +57,7 @@ def main():
 
         if DRAW_CANVAS: screen.draw_canvas(board)
 
-        algorithms.random_algorithm(board, anchor)
+        algorithms.basic_algorithm_vertical_first(board, anchor)
 
     print "Game ended."
     return
