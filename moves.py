@@ -11,6 +11,9 @@ import screen_handler as screen
 
 ### input helpers ###
 
+def get_color(x,y,board):
+    return board[y][x]
+
 def left_down():
     ap.mouse.toggle(True, ap.mouse.LEFT_BUTTON)
     time.sleep(SLEEPING_TIME)
