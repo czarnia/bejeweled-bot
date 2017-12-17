@@ -2,6 +2,7 @@
 # -*- coding: ascii -*-
 
 import autopy as ap
+import pygame
 import struct
 import Quartz.CoreGraphics as CG
 

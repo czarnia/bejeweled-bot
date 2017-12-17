@@ -57,7 +57,7 @@ def main():
 
         if DRAW_CANVAS: screen.draw_canvas(board)
 
-        algorithms.basic_algorithm_vertical_first(board, anchor)
+        algorithms.basic_algorithm_horizontal_first_border(board, anchor)
 
     print "Game ended."
     return
