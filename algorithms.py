@@ -155,6 +155,35 @@ def basic_algorithm_by_color(board, anchor):
     for x in movesdict[maxcolor]:
         moves.move_fields(x[0], x[1], x[2], x[3], anchor)
 
+def zone_algorithm2(board, anchor):
+    for y in range(0, 4):
+        for x in range(0, 4):
+            action(x,y,board,anchor)
+    for y in range(0, 4):
+        for x in range(4, 8):
+            action(x,y,board,anchor)
+    for y in range(0, 4):
+        for x in range(2, 6):
+            action(x,y,board,anchor)
+    for y in range(2, 6):
+        for x in range(2, 6):
+            action(x,y,board,anchor)
+    for y in range(4, 8):
+        for x in range(2, 6):
+            action(x,y,board,anchor)
+    for y in range(4, 8):
+        for x in range(0, 3):
+            action(x,y,board,anchor)
+    for y in range(4, 8):
+        for x in range(4, 8):
+            action(x,y,board,anchor)
+    for y in range(2, 6):
+        for x in range(0, 4):
+            action(x,y,board,anchor)
+    for y in range(2, 6):
+        for x in range(4, 8):
+            action(x,y,board,anchor)
+
 
 def basic_algorithm_horizontal_first(board, anchor):
     for y in range(0, 8):
