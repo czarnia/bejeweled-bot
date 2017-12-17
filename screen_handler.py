@@ -8,6 +8,9 @@ import Quartz.CoreGraphics as CG
 
 ### screen helpers #
 
+def get_color(x,y,board):
+    return board[y][x]
+
 def get_pixel(x, y):
     x, y = int(x)*2, int(y)*2
     data_format = "BBBB" #BBBB
