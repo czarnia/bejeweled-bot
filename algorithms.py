@@ -2,6 +2,12 @@ import moves
 import screen_handler as screen
 
 def action(x,y,board,anchor):
+    if screen.same_gem(x, y, x-2, y, board): # gem in the middle is missing, horizontal
+        if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x-1, y, x-1, y-1, anchor)
+        if screen.same_gem(x, y, x-1, y+1, board): moves.move_fields(x-1, y, x-1, y+1, anchor)
+    if screen.same_gem(x, y, x, y-2, board): # gem in the middle is missing, vertical
+        if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x, y-1, x-1, y-1, anchor)
+        if screen.same_gem(x, y, x+1, y-1, board): moves.move_fields(x, y-1, x+1, y-1, anchor)
     if screen.same_gem(x, y, x-1, y, board): # two gems next to each other, horizontal
         if screen.same_gem(x, y, x+1, y-1, board): moves.move_fields(x+1, y, x+1, y-1, anchor) # right
         if screen.same_gem(x, y, x+2, y, board): moves.move_fields(x+1, y, x+2, y, anchor)
@@ -16,12 +22,6 @@ def action(x,y,board,anchor):
         if screen.same_gem(x, y, x-1, y-2, board): moves.move_fields(x, y-2, x-1, y-2, anchor) # above
         if screen.same_gem(x, y, x+1, y-2, board): moves.move_fields(x, y-2, x+1, y-2, anchor)
         if screen.same_gem(x, y, x, y-3, board): moves.move_fields(x, y-2, x, y-3, anchor)
-    if screen.same_gem(x, y, x-2, y, board): # gem in the middle is missing, horizontal
-        if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x-1, y, x-1, y-1, anchor)
-        if screen.same_gem(x, y, x-1, y+1, board): moves.move_fields(x-1, y, x-1, y+1, anchor)
-    if screen.same_gem(x, y, x, y-2, board): # gem in the middle is missing, vertical
-        if screen.same_gem(x, y, x-1, y-1, board): moves.move_fields(x, y-1, x-1, y-1, anchor)
-        if screen.same_gem(x, y, x+1, y-1, board): moves.move_fields(x, y-1, x+1, y-1, anchor)
 
 
 def zone_algorithm(board, anchor):
