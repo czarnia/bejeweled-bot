@@ -18,7 +18,7 @@ import screen_handler as screen
 import algorithms
 
 MAX_MOVES = 5
-DRAW_CANVAS = False
+DRAW_CANVAS = True
 MAX_TIME = 65 # for some gems, use up to 160s
 
 def start_game(anchor):
@@ -57,7 +57,7 @@ def main():
 
         if DRAW_CANVAS: screen.draw_canvas(board)
 
-        algorithms.basic_algorithm_by_color(board, anchor)
+        algorithms.zone_algorithm(board, anchor)
 
     print "Game ended."
     return

@@ -117,6 +117,7 @@ def get_anchor():
 ### canvas helpers ###
 
 def draw_canvas(board):
+    disp = pygame.display.set_mode([320, 320])
     board_size = [320, 320]
     colors = {'y': (254, 254, 38), 'w': (254, 254, 254), 'r': (254, 29, 59),
               'o': (254, 128, 0),  'p': (250, 10, 250),  'g': (50, 254, 50),
